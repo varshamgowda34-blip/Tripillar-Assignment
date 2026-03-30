@@ -1,9 +1,9 @@
 package assignment5.module12;
 
-public class CountNodes {
-    static int count(Node root) {
+public class Height {
+    static int height(Node root) {
         if (root == null) return 0;
-        return 1 + count(root.left) + count(root.right);
+        return 1 + Math.max(height(root.left), height(root.right));
     }
 
     public static void main(String[] args) {
@@ -11,6 +11,6 @@ public class CountNodes {
         root.left = new Node(2);
         root.right = new Node(3);
 
-        System.out.println(count(root));
+        System.out.println(height(root));
     }
 }
